@@ -1,0 +1,159 @@
+{
+  "description": "Sample trusted circle for local development. Envelopes are in the exact wire format defined by crates/protocol. The mobile app shifts timestamps so the newest entry is a few minutes old; Rust tests validate them at `generated_at`.",
+  "generated_at": 1767225600000,
+  "local_person_id": "3f1e2d4c-5b6a-4789-8a0b-1c2d3e4f5a01",
+  "local_device_id": "9c8b7a6d-5e4f-4a3b-8c2d-1e0f9a8b7c01",
+  "devices": {
+    "9c8b7a6d-5e4f-4a3b-8c2d-1e0f9a8b7c01": "3f1e2d4c-5b6a-4789-8a0b-1c2d3e4f5a01",
+    "9c8b7a6d-5e4f-4a3b-8c2d-1e0f9a8b7c02": "3f1e2d4c-5b6a-4789-8a0b-1c2d3e4f5a02",
+    "9c8b7a6d-5e4f-4a3b-8c2d-1e0f9a8b7c03": "3f1e2d4c-5b6a-4789-8a0b-1c2d3e4f5a03"
+  },
+  "household": {
+    "id": "7b0c2f4e-1d2a-4c8e-9f3b-5a6d7e8f9a01",
+    "name": "The Lee household",
+    "members": [
+      { "id": "3f1e2d4c-5b6a-4789-8a0b-1c2d3e4f5a01", "display_name": "Sam", "role": "adult" },
+      { "id": "3f1e2d4c-5b6a-4789-8a0b-1c2d3e4f5a02", "display_name": "Jordan", "role": "adult" },
+      { "id": "3f1e2d4c-5b6a-4789-8a0b-1c2d3e4f5a03", "display_name": "Maya", "role": "child" },
+      { "id": "3f1e2d4c-5b6a-4789-8a0b-1c2d3e4f5a04", "display_name": "Grandma Rose", "role": "caregiver" }
+    ]
+  },
+  "envelopes": [
+    {
+      "version": 2,
+      "id": "e0a1b2c3-0000-4000-8000-000000000001",
+      "audience": { "scope": "household", "household_id": "7b0c2f4e-1d2a-4c8e-9f3b-5a6d7e8f9a01" },
+      "author": "3f1e2d4c-5b6a-4789-8a0b-1c2d3e4f5a01",
+      "origin_device": "9c8b7a6d-5e4f-4a3b-8c2d-1e0f9a8b7c01",
+      "created_at": 1767222600000,
+      "lamport": 1,
+      "expires_at": 1774998600000,
+      "payload": {
+        "type": "rendezvous_upsert",
+        "data": {
+          "id": "5e6f7a8b-9c0d-4e1f-8a2b-3c4d5e6f7a01",
+          "household_id": "7b0c2f4e-1d2a-4c8e-9f3b-5a6d7e8f9a01",
+          "name": "Front porch at home",
+          "details": "Wait on the porch. Spare key is with the Nguyens at number 14.",
+          "location": { "lat_e7": 476205000, "lon_e7": -1223493000 },
+          "when_to_go": "If power or phones are out for more than an hour",
+          "rank": 1
+        }
+      }
+    },
+    {
+      "version": 2,
+      "id": "e0a1b2c3-0000-4000-8000-000000000002",
+      "audience": { "scope": "household", "household_id": "7b0c2f4e-1d2a-4c8e-9f3b-5a6d7e8f9a01" },
+      "author": "3f1e2d4c-5b6a-4789-8a0b-1c2d3e4f5a01",
+      "origin_device": "9c8b7a6d-5e4f-4a3b-8c2d-1e0f9a8b7c01",
+      "created_at": 1767222660000,
+      "lamport": 2,
+      "expires_at": 1774998660000,
+      "payload": {
+        "type": "rendezvous_upsert",
+        "data": {
+          "id": "5e6f7a8b-9c0d-4e1f-8a2b-3c4d5e6f7a02",
+          "household_id": "7b0c2f4e-1d2a-4c8e-9f3b-5a6d7e8f9a01",
+          "name": "Lincoln Elementary, back gate",
+          "details": "By the bike racks on Pine St.",
+          "when_to_go": "If home isn't safe or we can't get there",
+          "rank": 2
+        }
+      }
+    },
+    {
+      "version": 2,
+      "id": "e0a1b2c3-0000-4000-8000-000000000003",
+      "audience": { "scope": "household", "household_id": "7b0c2f4e-1d2a-4c8e-9f3b-5a6d7e8f9a01" },
+      "author": "3f1e2d4c-5b6a-4789-8a0b-1c2d3e4f5a01",
+      "origin_device": "9c8b7a6d-5e4f-4a3b-8c2d-1e0f9a8b7c01",
+      "created_at": 1767222720000,
+      "lamport": 3,
+      "expires_at": 1774998720000,
+      "payload": {
+        "type": "rendezvous_upsert",
+        "data": {
+          "id": "5e6f7a8b-9c0d-4e1f-8a2b-3c4d5e6f7a03",
+          "household_id": "7b0c2f4e-1d2a-4c8e-9f3b-5a6d7e8f9a01",
+          "name": "Grandma Rose's house",
+          "details": "1420 Alder St. Use the side door.",
+          "when_to_go": "If we can't meet at the first two within 3 hours",
+          "rank": 3
+        }
+      }
+    },
+    {
+      "version": 2,
+      "id": "e0a1b2c3-0000-4000-8000-000000000004",
+      "audience": { "scope": "household", "household_id": "7b0c2f4e-1d2a-4c8e-9f3b-5a6d7e8f9a01" },
+      "author": "3f1e2d4c-5b6a-4789-8a0b-1c2d3e4f5a02",
+      "origin_device": "9c8b7a6d-5e4f-4a3b-8c2d-1e0f9a8b7c02",
+      "created_at": 1767223500000,
+      "lamport": 4,
+      "expires_at": 1767396300000,
+      "payload": {
+        "type": "check_in",
+        "data": {
+          "person_id": "3f1e2d4c-5b6a-4789-8a0b-1c2d3e4f5a02",
+          "state": "on_my_way",
+          "note": "Leaving the office, walking home",
+          "rendezvous_id": "5e6f7a8b-9c0d-4e1f-8a2b-3c4d5e6f7a01",
+          "recorded_at": 1767223500000
+        }
+      }
+    },
+    {
+      "version": 2,
+      "id": "e0a1b2c3-0000-4000-8000-000000000005",
+      "audience": { "scope": "household", "household_id": "7b0c2f4e-1d2a-4c8e-9f3b-5a6d7e8f9a01" },
+      "author": "3f1e2d4c-5b6a-4789-8a0b-1c2d3e4f5a02",
+      "origin_device": "9c8b7a6d-5e4f-4a3b-8c2d-1e0f9a8b7c02",
+      "created_at": 1767223800000,
+      "lamport": 5,
+      "expires_at": 1767396600000,
+      "payload": {
+        "type": "note",
+        "data": { "text": "Power is out on our whole street. Traffic lights are down on 5th." }
+      }
+    },
+    {
+      "version": 2,
+      "id": "e0a1b2c3-0000-4000-8000-000000000006",
+      "audience": { "scope": "household", "household_id": "7b0c2f4e-1d2a-4c8e-9f3b-5a6d7e8f9a01" },
+      "author": "3f1e2d4c-5b6a-4789-8a0b-1c2d3e4f5a03",
+      "origin_device": "9c8b7a6d-5e4f-4a3b-8c2d-1e0f9a8b7c03",
+      "created_at": 1767224400000,
+      "lamport": 2,
+      "expires_at": 1767397200000,
+      "payload": {
+        "type": "check_in",
+        "data": {
+          "person_id": "3f1e2d4c-5b6a-4789-8a0b-1c2d3e4f5a03",
+          "state": "safe",
+          "note": "At school with Ms. Patel",
+          "recorded_at": 1767224400000
+        }
+      }
+    },
+    {
+      "version": 2,
+      "id": "e0a1b2c3-0000-4000-8000-000000000007",
+      "audience": { "scope": "household", "household_id": "7b0c2f4e-1d2a-4c8e-9f3b-5a6d7e8f9a01" },
+      "author": "3f1e2d4c-5b6a-4789-8a0b-1c2d3e4f5a01",
+      "origin_device": "9c8b7a6d-5e4f-4a3b-8c2d-1e0f9a8b7c01",
+      "created_at": 1767225000000,
+      "lamport": 6,
+      "expires_at": 1767397800000,
+      "payload": {
+        "type": "check_in",
+        "data": {
+          "person_id": "3f1e2d4c-5b6a-4789-8a0b-1c2d3e4f5a04",
+          "state": "safe",
+          "note": "Checked on her in person. She's fine.",
+          "recorded_at": 1767225000000
+        }
+      }
+    }
+  ]
+}

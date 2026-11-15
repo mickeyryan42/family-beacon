@@ -1,0 +1,35 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  rust:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          components: rustfmt, clippy
+      - uses: Swatinem/rust-cache@v2
+      - run: cargo fmt --all -- --check
+      - run: cargo clippy --workspace --all-targets -- -D warnings
+      - run: cargo test --workspace --all-targets
+      - run: cargo run --quiet -p beacon-sync-core --example family_sim
+
+  mobile:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+      # Add `cache: pnpm` above and `--frozen-lockfile` here once pnpm-lock.yaml is committed.
+      - run: pnpm install
+      - run: pnpm --filter @family-beacon/mobile format:check
+      - run: pnpm --filter @family-beacon/mobile lint
+      - run: pnpm typecheck
+      - run: pnpm test:mobile

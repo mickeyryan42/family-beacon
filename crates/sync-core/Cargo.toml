@@ -1,0 +1,22 @@
+[package]
+name = "beacon-sync-core"
+description = "Local-first store-and-forward sync engine for Family Beacon."
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[dependencies]
+beacon-crypto.workspace = true
+beacon-protocol.workspace = true
+log.workspace = true
+rusqlite.workspace = true
+thiserror.workspace = true
+
+[dev-dependencies]
+serde.workspace = true
+serde_json.workspace = true
+
+[lints]
+workspace = true

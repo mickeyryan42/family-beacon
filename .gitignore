@@ -1,0 +1,55 @@
+# --- OS / editors ---
+.DS_Store
+.idea/
+.vscode/*
+!.vscode/extensions.json
+*.swp
+
+# --- Env ---
+.env
+.env.local
+
+# --- Node / pnpm ---
+node_modules/
+npm-debug.log*
+pnpm-debug.log*
+yarn-error.log
+coverage/
+*.tsbuildinfo
+
+# --- Rust ---
+/target/
+**/*.rs.bk
+
+# --- React Native / Metro ---
+.metro-health-check*
+*.jsbundle
+
+# --- iOS ---
+apps/mobile/ios/build/
+apps/mobile/ios/Pods/
+apps/mobile/vendor/bundle/
+xcuserdata/
+DerivedData/
+*.xcuserstate
+*.hmap
+*.ipa
+**/.xcode.env.local
+
+# --- Android ---
+apps/mobile/android/.gradle/
+apps/mobile/android/build/
+apps/mobile/android/app/build/
+apps/mobile/android/.cxx/
+apps/mobile/android/app/.cxx/
+local.properties
+*.iml
+*.hprof
+*.keystore
+!debug.keystore
+
+# --- fastlane ---
+**/fastlane/report.xml
+**/fastlane/Preview.html
+**/fastlane/screenshots
+**/fastlane/test_output

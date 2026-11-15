@@ -1,0 +1,2 @@
+# Tests may unwrap freely; production code should not.
+allow-unwrap-in-tests = true

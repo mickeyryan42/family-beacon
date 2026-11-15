@@ -1,0 +1,27 @@
+{
+  "name": "family-beacon",
+  "private": true,
+  "description": "Offline-first family check-ins, rendezvous planning, and local outage coordination.",
+  "license": "MIT",
+  "packageManager": "pnpm@9.15.4",
+  "engines": {
+    "node": ">=20",
+    "pnpm": ">=9"
+  },
+  "scripts": {
+    "start": "pnpm --filter @family-beacon/mobile start",
+    "start:reset": "pnpm --filter @family-beacon/mobile start:reset",
+    "android": "pnpm --filter @family-beacon/mobile android",
+    "ios": "pnpm --filter @family-beacon/mobile ios",
+    "pods": "pnpm --filter @family-beacon/mobile pods",
+    "simulate": "./scripts/simulate.sh",
+    "test": "pnpm test:rust && pnpm test:mobile",
+    "test:rust": "./scripts/test-rust.sh",
+    "test:mobile": "pnpm --filter @family-beacon/mobile test",
+    "typecheck": "pnpm --filter @family-beacon/mobile typecheck",
+    "lint": "./scripts/lint.sh",
+    "format": "./scripts/format.sh",
+    "format:check": "./scripts/format.sh --check",
+    "check": "pnpm format:check && pnpm lint && pnpm typecheck && pnpm test"
+  }
+}
